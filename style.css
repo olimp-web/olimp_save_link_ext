@@ -1,0 +1,40 @@
+.title{
+  color: #224;
+  font-size: 16px;
+}
+
+.form__wrapper{
+  background: #fff;
+  border: 3px solid #224;
+  padding: 12px;
+  padding-bottom: 52px;
+  width: 400px;
+  position: relative;
+}
+
+.field{
+  display: block;
+  margin: 10px 0;
+}
+.field__label{
+  display: inline-block;
+  font-weight: bold;
+  width: 90px;
+}
+.field__input{
+  width: 290px;
+  border: 2px solid #224;
+  padding: 4px;
+}
+.submit-btn{
+  color: #fff;
+  background-color: #000;
+  padding: 8px 24px;
+  /* float: right; */
+  border: 2px solid #224;
+  font-weihgt: bold;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  cursor: pointer;
+}
