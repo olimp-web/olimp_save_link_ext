@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "OlimpInside",
-  "description": "Save link with comment to knowlege databse",
+  "description": "Save link with comment to knowledge database",
   "version": "0.6",
   "icons": {
       "16": "images/icon-16.png",
@@ -13,13 +13,8 @@
     "storage",
     "activeTab"
   ],
-  "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
-  "page_action": {
+  "browser_action": {
     "default_title": "OlimpInside Knowlege Database",
-    "default_icon": "48x48.png",
     "default_popup": "popup.html",
     "default_icon": {
         "16": "images/icon-16.png",
