@@ -11,20 +11,20 @@
 <body>
   <h2 class="title">Save page to OLIMP DB</h2>
   <div class="form__wrapper">
-    <form method="post" action="http://inside.olimp-union.com" class="save-link-form" id="saveLinkForm">
+    <form method="post" action="http://inside.olimp-union.com/api/posts/" class="save-link-form" id="saveLinkForm">
       <div class="field">
         <label class="field__label" for="link-url-field">Url:</label>
-        <input id="linkUrlField" type="url" class="field__input">
+        <input id="linkUrlField" type="url" name="url" class="field__input" required>
       </div>
       <div class="field">
         <label class="field__label" for="link-url-field">Теги: </label>
-        <input type="text" class="field__input">
+        <input type="text" name="tags" class="field__input">
       </div>
       <div class="field">
         <label class="field__label" for="link-comment-field">Комментарий: </label>
-        <textarea class="field__input" name="comment" id="link-comment-field" cols="35" rows="4"></textarea>
+        <textarea class="field__input" name="comment" id="link-comment-field" cols="35" rows="4" required></textarea>
       </div>
-      <button class="submit-btn" type="submit" name="add_url_action">Сохранить</button>
+      <button class="submit-btn" type="submit">Сохранить</button>
     </form>
   </div>
 </body>
