@@ -15,14 +15,27 @@ chrome.tabs.query({'active': true},
 function sendFormToAPI(e) {
     e.preventDefault();
 
+    var token;
+    chrome.storage.local.get('token_', (res)=>{
+        if (res['token_']) {
+            token=res['token_'];
+        } else {
+            alert('Token not set!');
+        }
+
+    });
+
+
     const formData = new FormData(e.target)
 
     const request_init = {
         method: 'POST',
         mode: 'cors',
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        }),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        },
         body: JSON.stringify(Object.fromEntries(formData))
     };
 
@@ -52,6 +65,6 @@ function sendFormXHR(e) {
 
 
 document.addEventListener('DOMContentLoaded', (e) =>{
-//    document.getElementById('saveLinkForm').addEventListener("submit", sendFormToAPI);
-    document.getElementById('saveLinkForm').addEventListener("submit", sendFormXHR);
+    document.getElementById('saveLinkForm').addEventListener("submit", sendFormToAPI);
+//    document.getElementById('saveLinkForm').addEventListener("submit", sendFormXHR);
 });
