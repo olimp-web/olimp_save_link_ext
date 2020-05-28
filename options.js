@@ -11,13 +11,13 @@ $save_btn.onclick = function (e) {
   chrome.storage.local.set({
     "token_": $token_input.value
   }, function() {
-    console.log('Value is set to ' + value);
+    console.log('Value is set to ' + $token_input.value);
   });
 }
 
 window.onload = function () {
   chrome.storage.local.get(['token_'], function(result) {
     $token_input.value = result['token_']
-         console.log('Value currently is ' + result.key);
+         console.log('Value currently is ' + result['token_']);
   });
 }
